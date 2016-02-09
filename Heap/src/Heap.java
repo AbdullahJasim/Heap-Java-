@@ -15,6 +15,8 @@ public class Heap {
 		size++;
 	}
 	
+	//Removes an element from the heap
+	//should not be used often
 	public boolean remove(int target) {
 		int i = findIndex(target);
 		size--;
@@ -31,6 +33,8 @@ public class Heap {
 		return min;
 	}
 	
+	//Gets the list of all elements in the heap
+	//no particular order
 	public String getList() {
 		String result = "";
 		for (int i = 0; i < size; i++) {
@@ -41,6 +45,7 @@ public class Heap {
 		return result;
 	}
 	
+	//Gets the index of a given value
 	private int findIndex(int target) {
 		for (int i = 0; i < size; i++) {
 			if (heap[i] == target) return i;
@@ -74,6 +79,7 @@ public class Heap {
 		}
 	}
 	
+	//Interactive loop to let the user use the functions of the heap
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Heap heap = new Heap(100);
