@@ -17,12 +17,14 @@ public class Heap {
 	
 	//Removes an element from the heap
 	//should not be used often
+	//returns false if the value is not found
 	public boolean remove(int target) {
 		int i = findIndex(target);
+		if (i == -1) return false;
 		size--;
 		heap[i] = heap[size];
 		bubbleUp(i);
-		return false;
+		return true;
 	}
 	
 	public int popMin() {
